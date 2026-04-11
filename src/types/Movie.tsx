@@ -7,4 +7,6 @@ export interface Movie
     posterURL: string;
     genreId: string;
     ratingId: string;
+    releaseDate?: string;
+    publishedReviewCount?: number;
 }
