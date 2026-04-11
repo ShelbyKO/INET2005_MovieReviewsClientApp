@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
     gap: 20px;
-    min-height: 550px;
+    min-height: 300px;
 }
 
 .carousel-track {

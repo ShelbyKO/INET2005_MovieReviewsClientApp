@@ -1,8 +1,62 @@
 /* Style sheet for the RecentReviews component */
 .recent-reviews {
+    padding: 20px 0;
+}
 
+.recent-reviews h2 {
+    font-weight: 600;
+    color: #1e3c72;
+    margin-bottom: 30px;
 }
 
 .review-card {
-    
+    background: white;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
 }
+
+.review-card:hover {
+    border-color: #2a5298;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+}
+
+.review-poster {
+    width: 80px;
+    height: 107px;
+    object-fit: cover;
+    border-radius: 8px;
+    aspect-ratio: 3/4;
+    flex-shrink: 0;
+}
+
+.review-content {
+    flex-grow: 1;
+}
+
+.review-content h5 {
+    font-weight: 600;
+    color: #1e3c72;
+}
+
+.review-excerpt {
+    color: #495057;
+    line-height: 1.5;
+}
+
+.review-rating {
+    font-size: 32px;
+    font-weight: bold;
+    color: #0d6efd;
+    display: flex;
+    align-items: center;
+    min-width: 80px;
+    justify-content: center;
+}
+

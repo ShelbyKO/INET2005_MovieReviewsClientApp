@@ -7,25 +7,17 @@ import RecentReviews from "../RecentReviews/RecentReviews";
 
 
 export default function Home() {
-    const [movies, setMovies] = useState<Movie[]>([]);
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const res = await fetch(import.meta.env.VITE_API_HOST + '/api/movies'); // https://localhost:7195/api/movies
-            const movies = await res.json();
-            setMovies(movies)
-        }
-
-        fetchData()
-    }, [])
-
-    return <>
-        <h1>Home</h1>
+    return (
         <>
-            <MovieCarousel /> {}
+            <MovieCarousel />
+
+            <div className="container-fluid px-2 py-0" style={{ background: '#f8f9fa'}}>
+                <div className="row">
+                    <div className="col-md-8">
+                        <RecentReviews />
+                    </div>
+                </div>
+            </div>
         </>
-        <>
-            <RecentReviews /> {}
-        </>
-    </>
+    );
 }
