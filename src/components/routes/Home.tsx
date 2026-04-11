@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import {Link } from "react-router"
 import type { Movie } from "../../types/Movie";
 import MovieCard from "../MovieCard";
+import MovieCarousel from "../MovieCarousel/MovieCarousel";
 
 
 export default function Home() {
@@ -19,6 +20,9 @@ export default function Home() {
 
     return <>
         <h1>Home</h1>
+        <>
+            <MovieCarousel /> {}
+        </>
         {
             movies.length > 0 && (
                 movies.map(movie => (

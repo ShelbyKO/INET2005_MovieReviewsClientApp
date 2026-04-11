@@ -27,4 +27,18 @@ export default function MovieCarousel() {
 
         fetchTopMovies();
     }, []);
+
+    return (
+        <div className="carousel-container">
+            <div className="container">
+                <div className="movie-carousel">
+                    <button className="carousel-arrow" aria-label="Previous movie">◂</button>
+                    <div className="carousel-track">
+
+                    </div>
+                    <button className="carousel-arrow" aria-label="Next movie">▸</button>
+                </div>
+            </div>
+        </div>
+    )
 }

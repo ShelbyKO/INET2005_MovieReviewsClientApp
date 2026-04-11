@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import './index.css'
-import Dog from './components/Dog'
 
 import Home from './components/routes/Home'
 import Details from './components/routes/Details'
