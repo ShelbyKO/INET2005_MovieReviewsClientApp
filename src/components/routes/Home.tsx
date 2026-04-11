@@ -11,7 +11,7 @@ export default function Home() {
         <>
             <MovieCarousel />
 
-            <div className="container-fluid px-2 py-0" style={{ background: '#f8f9fa'}}>
+            <div className="container-fluid px-2 py-0 rounded" style={{ background: '#f8f9fa'}}>
                 <div className="row">
                     <div className="col-md-8">
                         <RecentReviews />

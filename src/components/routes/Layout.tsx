@@ -5,11 +5,11 @@ export default function Layout() {
     return (
         <>
             <nav className="navbar">
-                <div className="container-fluid mb-4">
-                    <Link className="navbar-brand" to="/">
-                        <img src="/MovieReviewsLogo.svg" alt="MovieReviews"/>
-                    </Link>
-                </div>
+                    <div className="navbar-content">
+                        <Link className="navbar-brand" to="/">
+                            <img className="navbar-brand" src="/MovieReviewsLogo.svg" alt="MovieReviews"/>
+                        </Link>
+                    </div>
             </nav>
             <main className="container">
                 <Outlet />

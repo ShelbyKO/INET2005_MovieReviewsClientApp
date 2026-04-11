@@ -1,7 +1,7 @@
 /* Style sheet for the MovieCarosel component */
 
 .carousel-container {
-    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+    background: linear-gradient(90deg,#09244b 0%, #4c93fd 50%, #09244b 100%);
     padding: 80px 0;
     position: relative;
     overflow: hidden;
