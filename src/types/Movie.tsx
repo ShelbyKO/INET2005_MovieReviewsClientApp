@@ -4,7 +4,7 @@ export interface Movie
     title: string;
     synopsis: string;
     runtime: number; 
-    posterURL: string;
+    PosterURL: string;
     genreId: string;
     ratingId: string;
     releaseDate?: string;

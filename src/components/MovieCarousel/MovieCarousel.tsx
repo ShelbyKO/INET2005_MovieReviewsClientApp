@@ -15,7 +15,7 @@ export default function MovieCarousel() {
     useEffect(() => {
         const fetchTopMovies = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_HOST}/api/movies/top-reviewed?limit=10`);
+                const res = await fetch(`${import.meta.env.VITE_API_HOST}/api/movies/top-reviewed?limit=5`);
                 const data = await res.json();
                 setMovies(data);
             } catch (error) {
@@ -28,15 +28,65 @@ export default function MovieCarousel() {
         fetchTopMovies();
     }, []);
 
+    // Previous and Next button handlers
+    const handlePrevious = () => {
+        setCurrentIndex((prev) => (prev === 0 ? movies.length - 1 : prev - 1));
+    };
+
+    const handleNext = () => {
+        setCurrentIndex((prev) => (prev === movies.length - 1 ? 0 : prev + 1));
+    };
+
+    // Get 5 visible movies based on the current index
+    const getVisibleMovies = () => {
+        if (movies.length === 0) return [];
+        const visible = [];
+        for (let i = -2; i <= 2; i++) {
+            const index = (currentIndex + i + movies.length) % movies.length;
+            visible.push({
+                movie: movies[index],
+                position: i,
+            });
+        }
+        console.log(visible);
+        return visible;
+    }
+
+    const getCardClass = (position: number) => {
+        if (position === 0) return 'featured';
+        if (position === -1 || position === 1) return 'side-near';
+        return 'side';
+    };
+
+    const getCardWidth = (position: number) => {
+        if (position === 0) return '280px';
+        if (position === -1 || position === 1) return '220px';
+        return '160px';
+    }
+
     return (
         <div className="carousel-container">
             <div className="container">
                 <div className="movie-carousel">
-                    <button className="carousel-arrow" aria-label="Previous movie">◂</button>
+                    <button className="carousel-arrow" onClick={handlePrevious} aria-label="Previous movie">◂</button>
                     <div className="carousel-track">
-
+                        {getVisibleMovies().map(({ movie, position }, idx) => (
+                            <div
+                                key={idx}
+                                className={`movie-card ${getCardClass(position)}`}
+                                style={{
+                                    flex: `0 0 ${getCardWidth(position)}`,
+                                    zIndex: position === 0 ? 10 : 5 - Math.abs(position)
+                                }}
+                            >
+                                <img
+                                    src={movie.PosterURL}
+                                    alt={movie.title}
+                                />
+                            </div>
+                        ))}
                     </div>
-                    <button className="carousel-arrow" aria-label="Next movie">▸</button>
+                    <button className="carousel-arrow" onClick={handleNext} aria-label="Next movie">▸</button>
                 </div>
             </div>
         </div>

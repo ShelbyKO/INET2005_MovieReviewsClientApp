@@ -24,7 +24,43 @@
 }
 
 .movie-card {
-    
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    aspect-ratio: 3/4;
+    object-fit: cover;
+}
+
+.movie-card.side {
+    opacity: 0.3;
+    transform: scale(0.65);
+    filter: brightness(0.5) blur(2px);
+    pointer-events: none;
+}
+
+.movie-card.side-near {
+    opacity: 0.7;
+    transform: scale(0.85);
+    filter: brightness(0.75) blue(1px);
+    pointer-events: none;
+}
+
+.movie-card.featured {
+    opacity: 1;
+    transform: scale(1);
+    filter: brightness(1.1);
+    z-index: 10;
+}
+
+.movie-card.featured:hover {
+    transform: scale(1.1);
 }
 
 .carousel-arrow {
