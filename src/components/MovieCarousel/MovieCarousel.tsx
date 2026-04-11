@@ -15,7 +15,7 @@ export default function MovieCarousel() {
     useEffect(() => {
         const fetchTopMovies = async () => {
             try {
-                const res = await fetch(`${import.meta.env.VITE_API_HOST}/api/movies/top-reviewed?limit=5`);
+                const res = await fetch(`${import.meta.env.VITE_API_HOST}/api/movies/top-reviewed?limit=10`);
                 const data = await res.json();
                 setMovies(data);
             } catch (error) {
@@ -52,16 +52,30 @@ export default function MovieCarousel() {
         return visible;
     }
 
+    // This will be used to assign a class to the card based on its position in the carousel
     const getCardClass = (position: number) => {
         if (position === 0) return 'featured';
         if (position === -1 || position === 1) return 'side-near';
         return 'side';
     };
 
+    // This will be used to modify the width of a card based on its position in the carousel
     const getCardWidth = (position: number) => {
         if (position === 0) return '280px';
         if (position === -1 || position === 1) return '220px';
         return '160px';
+    }
+
+    if (movies.length === 0) {
+        return (
+            <div className="carousel-container">
+                <div className="container">
+                    <div className="text-center text-white py-5">
+                        <p>No movies available</p>
+                    </div>
+                </div>
+            </div>
+        );
     }
 
     return (
@@ -81,8 +95,13 @@ export default function MovieCarousel() {
                             >
                                 <img
                                     src={movie.PosterURL}
-                                    alt={movie.title}
+                                    alt={movie.Title}
                                 />
+                                {position === 0 && (
+                                    <div className="movie-info">
+                                        <h4>{movie.Title}</h4>
+                                    </div>
+                                )}
                             </div>
                         ))}
                     </div>

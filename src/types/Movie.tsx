@@ -1,7 +1,7 @@
 export interface Movie
 {
     id: string;
-    title: string;
+    Title: string;
     synopsis: string;
     runtime: number; 
     PosterURL: string;
