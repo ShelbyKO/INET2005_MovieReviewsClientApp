@@ -3,6 +3,7 @@ import {Link } from "react-router"
 import type { Movie } from "../../types/Movie";
 import MovieCard from "../MovieCard";
 import MovieCarousel from "../MovieCarousel/MovieCarousel";
+import RecentReviews from "../RecentReviews/RecentReviews";
 
 
 export default function Home() {
@@ -23,15 +24,8 @@ export default function Home() {
         <>
             <MovieCarousel /> {}
         </>
-        {
-            movies.length > 0 && (
-                movies.map(movie => (
-                    <Link key={movie.id} to={`/details/${movie.id}`}>
-                       <MovieCard movie={movie} /> 
-                    </Link>
-                    
-                ))
-            )
-        }
+        <>
+            <RecentReviews /> {}
+        </>
     </>
 }

@@ -48,7 +48,6 @@ export default function MovieCarousel() {
                 position: i,
             });
         }
-        console.log(visible);
         return visible;
     }
 
