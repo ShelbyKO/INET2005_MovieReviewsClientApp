@@ -29,16 +29,16 @@ export default function Movies() {
     }, []);
 
     // Filter movies when the search query changes
-    // useEffect(() => {
-    //     if (searchQuery) {
-    //         const filtered = movies.filter(movie =>
-    //             movie.Title.toLowerCase().includes(searchQuery.toLowerCase())
-    //         );
-    //         setFilteredMovies(filtered);
-    //     } else {
-    //         setFilteredMovies(movies);
-    //     }
-    // }, [searchQuery, movies]);
+    useEffect(() => {
+        if (searchQuery) {
+            const filtered = movies.filter(movie =>
+                movie.Title.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+            setFilteredMovies(filtered);
+        } else {
+            setFilteredMovies(movies);
+        }
+    }, [searchQuery, movies]);
 
     return (
         <div className="movies-page">

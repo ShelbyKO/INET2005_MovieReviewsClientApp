@@ -1,7 +1,23 @@
+import { useState, useEffect} from 'react';
+import {useNavigate } from 'react-router';
 import { Link } from 'react-router';
 import './Navbar.css';
 
+
+
 export default function Navbar() {
+    const [searchTerm, setSearchTerm] = useState('');
+    const navigate = useNavigate();
+    
+    // Seach bar handler
+    const handleSearch = (e: React.SyntheticEvent<HTMLFormElement>) => {
+        e.preventDefault();
+        if (searchTerm.trim()) {
+            navigate(`/movies?search=${searchTerm}`);
+            setSearchTerm('');
+        }
+    }
+
     return (
         <nav className="navbar-custom">
             <div className="container-fluid">
@@ -17,7 +33,7 @@ export default function Navbar() {
                     <div className="nav-center">
                         <Link to="/">
                             <img
-                                src="/MovieReviewsLogo.svg"
+                                src="/MovieReviewsLogoWhite.svg"
                                 alt="Movie Reviews Logo"
                                 className="navbar-logo"
                             />
@@ -30,6 +46,22 @@ export default function Navbar() {
                             <button className="btn btn-outline-light">REVIEWS</button>
                         </Link>
                     </div>
+
+                    
+                </div>
+                <div className="carousel-search-wrapper">
+                    <form className="carousel-search-form" onSubmit={handleSearch}>
+                        <input
+                            className="form-control search-input"
+                            type="search"
+                            placeholder="Search for movies"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                        <button className="btn btn-light search-btn" type="submit">
+                            🔎︎
+                        </button>
+                    </form>
                 </div>
             </div>
         </nav>

@@ -1,5 +1,4 @@
 import { useState, useEffect} from 'react';
-import type { SubmitEventHandler } from 'react';
 import {useNavigate } from 'react-router';
 import type { Movie } from '../../types/Movie';
 import './MovieCarousel.css';
@@ -31,7 +30,7 @@ export default function MovieCarousel() {
     }, []);
 
     // Seach bar handler
-    const handleSearch = (e: SubmitEvent) => {
+    const handleSearch = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (searchTerm.trim()) {
             navigate(`/movies?search=${searchTerm}`);
@@ -103,7 +102,7 @@ export default function MovieCarousel() {
     return (
         <div className="carousel-container">
             <div className="container">
-                <div className="carousel-search-wrapper">
+                {/* <div className="carousel-search-wrapper">
                     <form className="carousel-search-form" onSubmit={handleSearch}>
                         <input
                             className="form-control search-input"
@@ -116,7 +115,7 @@ export default function MovieCarousel() {
                             🔎︎
                         </button>
                     </form>
-                </div>
+                </div> */}
                 <div className="movie-carousel">
                     <button className="carousel-arrow" onClick={handlePrevious} aria-label="Previous movie">◂</button>
                     <div className="carousel-track">

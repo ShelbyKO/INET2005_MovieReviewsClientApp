@@ -18,12 +18,12 @@
 }
 
 .search-info {
-    color: #6c757d;
+    color: rgba(255, 255, 255, 0.8);
     font-size: 1.1re,;
 }
 
 .search-info strong {
-    color: #1e3c72;
+   color: rgba(255, 255, 255, 0.8);
 }
 
 .movies-grid {
@@ -36,9 +36,13 @@
 .movie-grid-item {
     text-decoration: none;
     transition: transform 0.3s;
-    box-shadow: 0 8px 13px rgba(0,0,0,0.8);
-    background-color: #09244b50;
+    box-shadow: 0 8px 10px rgba(0,0,0,0.5);
+    /* background-color: #09244b50; */
+    /* background-color: rgba(255, 255, 255, 0.1); */
     border-radius: 25px;
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    backdrop-filter: blue(10px);
+    -webkit-backdrop-filter: blur(10px);
 }
 
 .movie-grid-item:hover {

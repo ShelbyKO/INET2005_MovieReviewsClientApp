@@ -2,7 +2,7 @@
 
 .carousel-container {
     background: linear-gradient(90deg,#09244b 0%, #4c93fd 50%, #09244b 100%);
-    padding-top: 80px;
+    padding-top: 40px;
     padding-bottom: 100px;
     position: relative;
     overflow: hidden;
