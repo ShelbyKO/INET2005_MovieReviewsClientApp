@@ -1,16 +1,18 @@
 import { Outlet } from "react-router"
 import { Link } from "react-router"
+import Navbar from "../Navbar/Navbar"
 
 export default function Layout() {
     return (
         <>
-            <nav className="navbar">
+            {/* <nav className="navbar">
                     <div className="navbar-content">
                         <Link className="navbar-brand" to="/">
                             <img className="navbar-brand" src="/MovieReviewsLogo.svg" alt="MovieReviews"/>
                         </Link>
                     </div>
-            </nav>
+            </nav> */}
+            <Navbar />
             <main className="container">
                 <Outlet />
             </main>
