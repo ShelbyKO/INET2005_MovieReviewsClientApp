@@ -71,8 +71,8 @@ export default function MovieCarousel() {
 
     // This will be used to modify the width of a card based on its position in the carousel
     const getCardWidth = (position: number) => {
-        if (position === 0) return '280px';
-        if (position === -1 || position === 1) return '220px';
+        if (position === 0) return '230px';
+        if (position === -1 || position === 1) return '200px';
         return '160px';
     }
 

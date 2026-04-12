@@ -8,6 +8,7 @@ import './index.css'
 import Home from './components/routes/Home'
 import Details from './components/routes/Details'
 import Layout from './components/routes/Layout'
+import Movies from './components/routes/Movies/Movies'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
@@ -15,6 +16,7 @@ createRoot(document.getElementById('root')!).render(
         <Route element={<Layout/>}>
         <Route path ="/" element={<Home />} />
         <Route path="/details/:id" element={<Details />} />
+        <Route path="/movies" element={<Movies />} />
         </Route>
       </Routes>
     </BrowserRouter>

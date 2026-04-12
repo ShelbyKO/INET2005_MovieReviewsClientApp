@@ -1,12 +1,13 @@
 export interface Movie
 {
-    id: string;
+    Id: number;
     Title: string;
-    synopsis: string;
-    runtime: number; 
+    Synopsis: string;
+    Runtime: number; 
     PosterURL: string;
-    genreId: string;
-    ratingId: string;
-    releaseDate?: string;
-    publishedReviewCount?: number;
+    Genre: string;
+    Rating: string;
+    ReleaseDate?: string;
+    PublishedReviewCount?: number;
+    AverageRating?: number;
 }
