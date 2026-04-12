@@ -1,4 +1,4 @@
 export interface Reviewer {
-    name: string;
-    reviewCount: number;
+    Name: string;
+    ReviewCount: number;
 }

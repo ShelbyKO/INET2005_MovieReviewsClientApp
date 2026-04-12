@@ -28,6 +28,15 @@ export default function RecentReviews() {
         fetchReviews();
     }, []);
 
+    if (loading) {
+        return (
+            <div className="recent-reviews">
+                <h2 className="mb-4">Recent Reviews</h2>
+                <p className="text-muted">Loading reviews...</p>
+            </div>
+        );
+    }
+    
     if (reviews.length === 0) {
         return (
             <div className="recent-reviews">

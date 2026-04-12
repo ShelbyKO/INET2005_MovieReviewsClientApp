@@ -65,6 +65,18 @@ export default function MovieCarousel() {
         return '160px';
     }
 
+    if (loading) {
+        return (
+            <div className="carousel-container">
+                <div className="container">
+                    <div className="text-center text-white py-5">
+                        <p>Loading top movies...</p>
+                    </div>   
+                </div>
+            </div>
+        );
+    }
+
     if (movies.length === 0) {
         return (
             <div className="carousel-container">

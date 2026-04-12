@@ -10,7 +10,7 @@ export default function TopReviewers() {
         const fetchReviewers = async () => {
             try {
                 const res = await fetch(
-                    `${import.meta.env.VITE_API_HOST}/api/reviewers/top?limit=0`
+                    `${import.meta.env.VITE_API_HOST}/api/reviewers/top?limit=6`
                 );
                 const data = await res.json();
                 setReviewers(data);
@@ -24,6 +24,14 @@ export default function TopReviewers() {
         fetchReviewers();
     }, []);
 
+    if (loading) {
+        return (
+            <div className="top-reviews">
+                <h2 className="mb-4">Top Reviewers</h2>
+                <p className="text-muted">Loading reviewers...</p>
+            </div>
+        );
+    }
     if (reviewers.length === 0) {
         return (
             <div className="top-reviewers">
@@ -32,4 +40,18 @@ export default function TopReviewers() {
             </div>
         );
     }
+
+    return (
+        <div className="top-reviewers">
+            <h2 className="top-reviewers">Top Reviewers</h2>
+            <div className="reviewers-list">
+                {reviewers.map((reviewer, index) => (
+                    <div key={index} className="reviewer-item">
+                        <span className="reviewer-name">{reviewer.Name}</span>
+                        <span className="review-count">{reviewer.ReviewCount} Reviews</span>
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
 }

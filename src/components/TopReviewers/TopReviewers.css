@@ -11,3 +11,40 @@
     color: #1e3c72;
     margin-bottom: 25px;
 }
+
+.reviewers-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewer-item {
+    padding: 15px 0;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background 0.2s;
+}
+
+.reviewer-item:last-child {
+    border-bottom: none;
+}
+
+.reviewer-item:hover {
+    background: #f8f9fa;
+    margin: 0 -15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border-radius: 8px;
+}
+
+.reviewer-name {
+    font-weight: 600;
+    color: #212529;
+}
+
+.review-count {
+    font-style: italic;
+    color: #6c757d;
+    font-size: 0.9rem;
+}

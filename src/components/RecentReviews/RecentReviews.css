@@ -1,6 +1,8 @@
 /* Style sheet for the RecentReviews component */
 .recent-reviews {
-    padding: 20px 0;
+    padding-left: 30px;
+    padding-right: 0px;
+    padding-top: 20px;
 }
 
 .recent-reviews h2 {
