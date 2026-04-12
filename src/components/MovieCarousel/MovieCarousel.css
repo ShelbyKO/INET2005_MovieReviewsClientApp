@@ -111,3 +111,44 @@
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.15);
 }
+
+.carousel-search-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.carousel-search-form {
+    display:flex;
+    background-color: white;
+    border-radius: 25px;
+}
+
+.carousel-search-form:hover {
+    transform: scale(1.02);
+}
+
+
+.carousel-search-form .search-input {
+    border-radius: 25px;
+    padding: 5px 20px;
+    background-color: white;
+    border-color: white;
+}
+
+.carousel-search-form .search-input:focus {
+    background: white;
+    border-color: white;
+    box-shadow: none;
+}
+.carousel-search-form .search-btn {
+    font-size: 1rem;
+    border-radius: 25px;
+    background-color: white;
+    max-height: 100%;
+    border-color: white;
+}
+
+.carousel-search-form .search-btn:hover {
+    max-height: 100%;
+    border-color: white;
+}

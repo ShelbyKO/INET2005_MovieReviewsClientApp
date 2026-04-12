@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect} from 'react';
+import type { SubmitEventHandler } from 'react';
 import {useNavigate } from 'react-router';
 import type { Movie } from '../../types/Movie';
 import './MovieCarousel.css';
@@ -10,6 +11,7 @@ export default function MovieCarousel() {
     const [movies, setMovies] = useState<Movie[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0)
     const [loading, setLoading] = useState(true);
+    const [searchTerm, setSearchTerm] = useState('');
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -27,6 +29,15 @@ export default function MovieCarousel() {
 
         fetchTopMovies();
     }, []);
+
+    // Seach bar handler
+    const handleSearch = (e: SubmitEvent) => {
+        e.preventDefault();
+        if (searchTerm.trim()) {
+            navigate(`/movies?search=${searchTerm}`);
+            setSearchTerm('');
+        }
+    }
 
     // Previous and Next button handlers
     const handlePrevious = () => {
@@ -92,6 +103,20 @@ export default function MovieCarousel() {
     return (
         <div className="carousel-container">
             <div className="container">
+                <div className="carousel-search-wrapper">
+                    <form className="carousel-search-form" onSubmit={handleSearch}>
+                        <input
+                            className="form-control search-input"
+                            type="search"
+                            placeholder="Search for movies"
+                            value={searchTerm}
+                            onChange={(e) => setSearchTerm(e.target.value)}
+                        />
+                        <button className="btn btn-light search-btn" type="submit">
+                            🔎︎
+                        </button>
+                    </form>
+                </div>
                 <div className="movie-carousel">
                     <button className="carousel-arrow" onClick={handlePrevious} aria-label="Previous movie">◂</button>
                     <div className="carousel-track">
