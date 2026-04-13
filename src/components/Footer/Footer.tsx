@@ -1,6 +1,9 @@
 import { Link } from 'react-router';
 import './Footer.css';
 
+// A client facing Movie Review Web App By Shelby Oakes
+// Updated: April 12, 2026
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 

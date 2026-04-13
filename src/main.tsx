@@ -10,6 +10,10 @@ import Details from './components/routes/MovieDetails/MovieDetails'
 import Layout from './components/routes/Layout'
 import Movies from './components/routes/Movies/Movies'
 import Reviews from './components/routes/Reviews/Reviews'
+
+// A client facing Movie Review Web App By Shelby Oakes
+// Updated: April 12, 2026
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>

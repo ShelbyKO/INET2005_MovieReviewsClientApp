@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import type { Reviewer } from '../../types/Reviewer';
 import './TopReviewers.css'
 
+// A client facing Movie Review Web App By Shelby Oakes
+// Updated: April 12, 2026
+
 export default function TopReviewers() {
     const [reviewers, setReviewers] = useState<Reviewer[]>([]);
     const [loading, setLoading] = useState(true);

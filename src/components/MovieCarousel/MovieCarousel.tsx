@@ -2,6 +2,9 @@ import { useState, useEffect} from 'react';
 import type { Movie } from '../../types/Movie';
 import './MovieCarousel.css';
 
+// A client facing Movie Review Web App By Shelby Oakes
+// Updated: April 12, 2026
+
 // embla-carousel.com has some pretty neat carousel examples,
 // This component's code is adapted from a combination (Scale, Opacity, Sliders Per View) of exampels
 // https://www.embla-carousel.com/docs/examples/predefined

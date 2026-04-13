@@ -4,6 +4,8 @@ import './RecentReviews.css';
 import { useState } from "react";
 import { useEffect } from "react";
 
+// A client facing Movie Review Web App By Shelby Oakes
+// Updated: April 12, 2026
 
 export default function RecentReviews() {
     const [reviews, setReviews] = useState<Review[]>([]);
