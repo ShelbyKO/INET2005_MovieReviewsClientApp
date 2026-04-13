@@ -6,7 +6,7 @@ import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import './index.css'
 
 import Home from './components/routes/Home'
-import Details from './components/routes/Details'
+import Details from './components/routes/MovieDetails/MovieDetails'
 import Layout from './components/routes/Layout'
 import Movies from './components/routes/Movies/Movies'
 createRoot(document.getElementById('root')!).render(
