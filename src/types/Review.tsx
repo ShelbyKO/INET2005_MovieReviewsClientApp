@@ -3,9 +3,9 @@ export interface Review
     Id: number;
     Rating: number;
     ReviewText: string;
-    publishedDate: string;
-    movieId: number;
-    movieTitle: string;
+    PublishedDate: string;
+    MovieId: number;
+    MovieTitle: string;
     MoviePosterURL: string;
     ReviewerName: string;
 }

@@ -53,15 +53,15 @@ export default function RecentReviews() {
                 <div
                     key={review.Id}
                     className="review-card"
-                    onClick={() => navigate(`/details/${review.movieId}`)}
+                    onClick={() => navigate(`/details/${review.MovieId}`)}
                 >
                     <img
                         src={review.MoviePosterURL}
-                        alt={review.movieTitle}
+                        alt={review.MovieTitle}
                         className="review-poster"
                     />
                     <div className="review-content">
-                        <h5 className="mb-1">{review.movieTitle}</h5>
+                        <h5 className="mb-1">{review.MovieTitle}</h5>
                         <p className="text-muted mb-2">Reviewed by {review.ReviewerName}</p>
                         <p className="review-excerpt mb-0">
                             "{review.ReviewText.substring(0, 100)}..."

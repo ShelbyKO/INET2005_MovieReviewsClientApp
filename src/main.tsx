@@ -9,6 +9,7 @@ import Home from './components/routes/Home'
 import Details from './components/routes/MovieDetails/MovieDetails'
 import Layout from './components/routes/Layout'
 import Movies from './components/routes/Movies/Movies'
+import Reviews from './components/routes/Reviews/Reviews'
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
@@ -17,10 +18,9 @@ createRoot(document.getElementById('root')!).render(
         <Route path ="/" element={<Home />} />
         <Route path="/details/:id" element={<Details />} />
         <Route path="/movies" element={<Movies />} />
+        <Route path="/reviews" element={<Reviews />} />
         </Route>
       </Routes>
     </BrowserRouter>
-    
-    {/* <Dog breed="Pug" name="Audrey" /> */}
   </StrictMode>,
 )
