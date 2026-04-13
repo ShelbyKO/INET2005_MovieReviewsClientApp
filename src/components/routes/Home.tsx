@@ -1,7 +1,4 @@
-import { useState, useEffect } from "react"
-import {Link } from "react-router"
-import type { Movie } from "../../types/Movie";
-import MovieCard from "../MovieCard";
+
 import MovieCarousel from "../MovieCarousel/MovieCarousel";
 import RecentReviews from "../RecentReviews/RecentReviews";
 import TopReviewers from "../TopReviewers/TopReviewers"
